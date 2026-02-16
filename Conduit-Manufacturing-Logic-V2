@@ -1,0 +1,75 @@
+def metering(total_footage_to_process):
+    total_cuts = 0
+    total_trims = 0
+    total_tape = 0
+    segments_processed = 0
+
+    footage_remaining = total_footage_to_process
+
+    while footage_remaining >= 25:
+        # Count up to 25
+        for i in range(1, 26):
+            print(i)
+        
+        footage_remaining -= 25
+        segments_processed += 1
+
+        # Cut
+        total_cuts += 1
+        print("Cut!")
+
+        # Trim both ends
+        total_trims += 2
+        print("Trim 1")
+        print("Trim 2")
+
+        # Tape both ends
+        total_tape += 2
+        print("Tape 1")
+        print("Tape 2")
+
+        print("---")  # Separator between segments
+
+    return segments_processed, total_cuts, total_trims, total_tape
+
+
+
+segments, cuts, trims, tapes = metering(50)
+print(f"Segments processed: {segments}")
+print(f"Total cuts: {cuts}")
+print(f"Total trims: {trims}")
+print(f"Total tapes: {tapes}")
+
+
+
+
+
+def boxing(total_coils):
+    boxes = 0
+    labels = 0
+    full_stack = 0
+
+    coils_remaining = total_coils
+
+    while coils_remaining > 0:
+    
+        #Box Hose
+        boxes += 1
+        print("Conduit Boxed!")
+        #Label Box
+        labels += 1
+        print("Insert Product Label Here")
+
+        coils_remaining -= 1
+        #Checks If Stack Is Complete
+        if boxes == 15:
+            for i in range(1, 16):
+                print(i)
+            full_stack += 1
+            print("Stack Complete!")
+            boxes = 0
+
+    return boxes, labels, full_stack
+    
+
+boxes, labels, full_stack = boxing(15)
