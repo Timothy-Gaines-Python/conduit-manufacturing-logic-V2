@@ -34,7 +34,7 @@ def metering(total_footage_to_process):
 
 
 
-segments, cuts, trims, tapes = metering(50)
+segments, cuts, trims, tapes = metering(375)
 print(f"Segments processed: {segments}")
 print(f"Total cuts: {cuts}")
 print(f"Total trims: {trims}")
